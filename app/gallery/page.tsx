@@ -8,7 +8,11 @@ export default function Gallery() {
   ];
 
   const brickWorksImages = [
-    // Add brick work images later
+    "/images/bc1.jpeg",
+    "/images/bc2.jpeg",
+    "/images/bc3.jpeg",
+    "/images/bc4.jpeg",
+    "/images/bc6.jpeg",
   ];
 
   const residentialImages = [
@@ -64,8 +68,16 @@ export default function Gallery() {
           construction projects.
         </p>
 
-        <div style={styles.emptyBox}>
-          Images coming soon...
+        <div style={styles.grid}>
+          {brickWorksImages.map((img, index) => (
+            <div key={index} style={styles.card}>
+              <img
+                src={img}
+                alt={`Brick Work ${index + 1}`}
+                style={styles.image}
+              />
+            </div>
+          ))}
         </div>
       </section>
 
@@ -103,9 +115,7 @@ export default function Gallery() {
 
       {/* VIDEO SECTION */}
       <div style={styles.videoSection}>
-        <h2 style={styles.videoTitle}>
-          🎥 Project Highlight Video
-        </h2>
+        <h2 style={styles.videoTitle}>🎥 Project Highlight Video</h2>
 
         <video controls style={styles.video}>
           <source src="/images/v1.mp4" type="video/mp4" />
