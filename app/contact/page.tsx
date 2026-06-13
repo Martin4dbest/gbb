@@ -44,13 +44,6 @@ export default function Contact() {
           value="New Message - Good Better Best Construction and Finishing Ltd"
         />
 
-        {/* ✅ ENFORCE BOTH EMAILS */}
-        <input
-          type="hidden"
-          name="_cc"
-          value="goodbetterbest52@gmail.com,martin4dtruth2@gmail.com"
-        />
-
         <button type="submit" style={styles.button}>
           Send Message
         </button>
