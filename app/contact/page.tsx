@@ -1,7 +1,7 @@
 export default function Contact() {
   return (
     <main style={{ padding: "20px", maxWidth: "700px", margin: "0 auto" }}>
-      <h1>Contact Us</h1>
+      Contact Us
 
       <p>📧 Email: goodbetterbest52@gmail.com</p>
       <p>📞 Phone: +234 7066654507</p>
@@ -37,11 +37,18 @@ export default function Contact() {
           style={styles.textarea}
         />
 
-        {/* This ensures email subject shows inside your inbox */}
+        {/* Subject line */}
         <input
           type="hidden"
           name="_subject"
           value="New Message - Good Better Best Construction and Finishing Ltd"
+        />
+
+        {/* ✅ ENFORCE BOTH EMAILS */}
+        <input
+          type="hidden"
+          name="_cc"
+          value="goodbetterbest52@gmail.com,martin4dtruth2@gmail.com"
         />
 
         <button type="submit" style={styles.button}>
