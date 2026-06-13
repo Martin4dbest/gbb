@@ -1,38 +1,111 @@
 export default function Gallery() {
-  const images = [
-    "/images/gal1.jpeg",
-    "/images/gal2.jpeg",
+  const upholsteryImages = [
+    "/images/up1.jpeg",
+    "/images/up2.jpeg",
+    "/images/up3.jpeg",
+    "/images/up4.jpeg",
+    "/images/up5.jpeg",
+  ];
 
-    // reusing existing images
-    "/images/k1.jpeg",
-    "/images/k2.jpeg",
-    "/images/k3.jpeg",
-    "/images/gd.jpg",
-    "/images/pc1.jpeg",
-    "/images/gd.jpg",
-    "/images/k1.jpeg",
+  const brickWorksImages = [
+    // Add brick work images later
+  ];
+
+  const residentialImages = [
+    // Add house project images later
+  ];
+
+  const commercialImages = [
+    // Add office/commercial building images later
   ];
 
   return (
     <main style={styles.main}>
       {/* TITLE */}
       <h1 style={styles.title}>Our Gallery</h1>
+
       <p style={styles.subtitle}>
-        A collection of our construction projects and site works.
+        Explore our completed projects across construction, upholstery,
+        renovations, and engineering works.
       </p>
 
-      {/* IMAGE GRID */}
-      <div style={styles.grid}>
-        {images.map((img, index) => (
-          <div key={index} style={styles.card}>
-            <img src={img} alt={`Gallery ${index}`} style={styles.image} />
-          </div>
-        ))}
-      </div>
+      {/* ================= UPHOLSTERY ================= */}
+      <section style={styles.section}>
+        <h2 style={styles.sectionTitle}>
+          🪑 Upholstery Chairs (Home & Office)
+        </h2>
+
+        <p style={styles.sectionText}>
+          Professional upholstery services for homes, offices, hotels,
+          conference halls, reception areas, and executive workspaces.
+        </p>
+
+        <div style={styles.grid}>
+          {upholsteryImages.map((img, index) => (
+            <div key={index} style={styles.card}>
+              <img
+                src={img}
+                alt={`Upholstery ${index + 1}`}
+                style={styles.image}
+              />
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* ================= BRICK WORKS ================= */}
+      <section style={styles.section}>
+        <h2 style={styles.sectionTitle}>
+          🧱 Brick & Block Works (Fence & Building)
+        </h2>
+
+        <p style={styles.sectionText}>
+          Fence construction, block laying, foundations, and building wall
+          construction projects.
+        </p>
+
+        <div style={styles.emptyBox}>
+          Images coming soon...
+        </div>
+      </section>
+
+      {/* ================= RESIDENTIAL ================= */}
+      <section style={styles.section}>
+        <h2 style={styles.sectionTitle}>
+          🏠 Residential Building Projects
+        </h2>
+
+        <p style={styles.sectionText}>
+          Modern residential homes built with quality materials and expert
+          craftsmanship.
+        </p>
+
+        <div style={styles.emptyBox}>
+          Images coming soon...
+        </div>
+      </section>
+
+      {/* ================= COMMERCIAL ================= */}
+      <section style={styles.section}>
+        <h2 style={styles.sectionTitle}>
+          🏢 Commercial Building Projects
+        </h2>
+
+        <p style={styles.sectionText}>
+          Office complexes, shopping plazas, warehouses, and commercial
+          developments.
+        </p>
+
+        <div style={styles.emptyBox}>
+          Images coming soon...
+        </div>
+      </section>
 
       {/* VIDEO SECTION */}
       <div style={styles.videoSection}>
-        <h2 style={styles.videoTitle}>Project Highlight Video</h2>
+        <h2 style={styles.videoTitle}>
+          🎥 Project Highlight Video
+        </h2>
 
         <video controls style={styles.video}>
           <source src="/images/v1.mp4" type="video/mp4" />
@@ -53,50 +126,76 @@ const styles: any = {
   },
 
   title: {
-    fontSize: "32px",
+    fontSize: "36px",
     fontWeight: "bold",
     textAlign: "center",
+    marginBottom: "10px",
   },
 
   subtitle: {
     textAlign: "center",
+    color: "#666",
+    marginBottom: "40px",
+  },
+
+  section: {
+    marginBottom: "60px",
+  },
+
+  sectionTitle: {
+    fontSize: "28px",
+    fontWeight: "bold",
+    marginBottom: "10px",
+    color: "#1f2937",
+  },
+
+  sectionText: {
     color: "#666",
     marginBottom: "20px",
   },
 
   grid: {
     display: "grid",
-    gridTemplateColumns: "repeat(auto-fit, minmax(150px, 1fr))",
-    gap: "10px",
+    gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))",
+    gap: "20px",
   },
 
   card: {
     overflow: "hidden",
-    borderRadius: "10px",
+    borderRadius: "12px",
+    boxShadow: "0 4px 12px rgba(0,0,0,0.1)",
   },
 
   image: {
     width: "100%",
-    height: "120px",
+    height: "260px",
     objectFit: "cover",
-    borderRadius: "10px",
-    transition: "0.3s",
+    display: "block",
+  },
+
+  emptyBox: {
+    padding: "40px",
+    border: "2px dashed #d1d5db",
+    borderRadius: "12px",
+    textAlign: "center",
+    color: "#6b7280",
+    background: "#f9fafb",
   },
 
   videoSection: {
-    marginTop: "30px",
+    marginTop: "50px",
     textAlign: "center",
   },
 
   videoTitle: {
-    fontSize: "22px",
+    fontSize: "24px",
     fontWeight: "bold",
-    marginBottom: "10px",
+    marginBottom: "15px",
   },
 
   video: {
     width: "100%",
-    maxWidth: "800px",
+    maxWidth: "900px",
     borderRadius: "12px",
   },
 };
