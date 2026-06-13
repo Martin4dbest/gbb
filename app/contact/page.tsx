@@ -14,6 +14,7 @@ export default function Contact() {
         style={{ display: "grid", gap: "10px", marginTop: "20px" }}
       >
         <input
+          type="text"
           name="name"
           placeholder="Your Name"
           required
@@ -21,8 +22,8 @@ export default function Contact() {
         />
 
         <input
-          name="email"
           type="email"
+          name="email"
           placeholder="Your Email"
           required
           style={styles.input}
@@ -36,11 +37,11 @@ export default function Contact() {
           style={styles.textarea}
         />
 
-        {/* Optional subject */}
+        {/* This ensures email subject shows inside your inbox */}
         <input
           type="hidden"
           name="_subject"
-          value="New Contact Message - Good Better Best Construction and Finishing Ltd"
+          value="New Message - Good Better Best Construction and Finishing Ltd"
         />
 
         <button type="submit" style={styles.button}>
