@@ -1,20 +1,80 @@
 export default function Contact() {
   return (
-    <main style={{ padding: "20px" }}>
+    <main style={{ padding: "20px", maxWidth: "700px", margin: "0 auto" }}>
       <h1>Contact Us</h1>
 
-      <p>📧 Email: info@construction.com</p>
-      <p>📞 Phone: +234 800 123 4567</p>
-      <p>📍 Location: Lagos, Nigeria</p>
+      <p>📧 Email: goodbetterbest52@gmail.com</p>
+      <p>📞 Phone: +234 7066654507</p>
+      <p>📍 Location: Port Harcourt, Nigeria</p>
 
       {/* CONTACT FORM */}
-      <form style={{ display: "grid", gap: "10px", marginTop: "20px" }}>
-        <input placeholder="Your Name" />
-        <input placeholder="Your Email" />
-        <textarea placeholder="Your Message"></textarea>
-        <button type="submit">Send Message</button>
-      </form>
+      <form
+        action="https://formspree.io/f/xgobpllk"
+        method="POST"
+        style={{ display: "grid", gap: "10px", marginTop: "20px" }}
+      >
+        <input
+          name="name"
+          placeholder="Your Name"
+          required
+          style={styles.input}
+        />
 
+        <input
+          name="email"
+          type="email"
+          placeholder="Your Email"
+          required
+          style={styles.input}
+        />
+
+        <textarea
+          name="message"
+          placeholder="Your Message"
+          rows={6}
+          required
+          style={styles.textarea}
+        />
+
+        {/* Optional subject */}
+        <input
+          type="hidden"
+          name="_subject"
+          value="New Contact Message - Good Better Best Construction and Finishing Ltd"
+        />
+
+        <button type="submit" style={styles.button}>
+          Send Message
+        </button>
+      </form>
     </main>
   );
 }
+
+/* ================= STYLES ================= */
+
+const styles: any = {
+  input: {
+    padding: "12px",
+    borderRadius: "8px",
+    border: "1px solid #ccc",
+    outline: "none",
+  },
+
+  textarea: {
+    padding: "12px",
+    borderRadius: "8px",
+    border: "1px solid #ccc",
+    outline: "none",
+    resize: "none",
+  },
+
+  button: {
+    padding: "12px",
+    borderRadius: "8px",
+    border: "none",
+    backgroundColor: "#f5c542",
+    fontWeight: "bold",
+    cursor: "pointer",
+  },
+};
